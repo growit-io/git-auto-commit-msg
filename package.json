@@ -1,6 +1,6 @@
 {
   "name": "git-auto-commit-msg",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Automatically generates a conventional commit message",
   "main": "index.js",
   "bin": {
