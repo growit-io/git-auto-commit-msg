@@ -1,4 +1,4 @@
-# git-auto-commit-msg
+# git-auto-commit-msg [![Build Status](https://travis-ci.org/growit-io/git-auto-commit-msg.svg?branch=master)](https://travis-ci.org/growit-io/git-auto-commit-msg)
 `git-auto-commit-msg` generates a conventional commit message from any changed files found in the working tree.
 
 ## Example
