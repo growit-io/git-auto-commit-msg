@@ -2,7 +2,7 @@ const { execFileSync } = require('child_process');
 
 const PROGRAM_FILE = './index.js'
 
-test('exits successfully', () => {
+test('exits successfully', function () => {
   expect(program().code).toBe(0);
 });
 
