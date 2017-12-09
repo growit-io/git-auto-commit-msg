@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -o errexit
+git add -A -- "$@"
+main="$(dirname "$0")/../index.js"
+msg="$("$main" "$@")"
+if [[ -n "$msg" ]]; then
+  git commit -m "wip: $msg" "$@"
+fi

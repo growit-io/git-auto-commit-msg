@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -o errexit
+
+code=0
+
+for sha in $(git rev-list HEAD); do
+  msg="$(git log -1 --format='%B' $sha)"
+  err="$(validate-commit-msg "$msg" <&- 2>&1 || true)"
+  if [[ -n $err ]]; then
+    code=1
+    echo "$sha: $err"
+  fi
+done
+
+exit $code

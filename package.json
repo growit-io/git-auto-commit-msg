@@ -1,0 +1,38 @@
+{
+  "name": "git-auto-commit-msg",
+  "version": "0.0.0",
+  "description": "Automatically generates a conventional commit message",
+  "main": "index.js",
+  "bin": {
+    "git-auto-commit-msg": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "npm i --only=dev && npm run prerelease && standard-version",
+    "commitwip": "hack/commit-wip",
+    "commitmsg": "validate-commit-msg",
+    "prerelease": "hack/validate-commit-history"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/growit-io/git-auto-commit-message.git"
+  },
+  "keywords": [
+    "git"
+  ],
+  "author": "Uwe Stuehler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/growit-io/git-auto-commit-message/issues"
+  },
+  "homepage": "https://github.com/growit-io/git-auto-commit-message#readme",
+  "devDependencies": {
+    "standard-version": "^4.2.0",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "dependencies": {
+    "commander": "^2.12.2",
+    "shell-escape": "^0.2.0",
+    "shelljs": "^0.7.8"
+  }
+}
