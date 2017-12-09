@@ -1,9 +1,21 @@
 language: node_js
+
 node_js:
   - 7
   - 6
   - 4
+
 script: 'npm run ci'
+
+before_install:
+  - npm i -g makeshift && makeshift -s @growit-io -r registry.npmjs.org
+
+deploy:
+  provider: npm
+  email: ustuehler@growit.io
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
 
 notifications:
   email:
