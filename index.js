@@ -11,7 +11,7 @@ program
   .description('Generates a conventional commit message based on staged changes')
   .parse(process.argv)
 
-const PATHSPEC_DOCS = ['README.md', 'CHANGELOG.md', 'docs']
+const PATHSPEC_DOCS = ['README.md', 'CHANGELOG.md', 'docs', 'examples', 'example']
 
 commitmsg(program.args, function (msg) {
   if (msg !== '') {

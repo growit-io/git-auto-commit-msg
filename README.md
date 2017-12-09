@@ -2,16 +2,28 @@
 
 `git-auto-commit-msg` attempts to generate a [conventional](https://conventionalcommits.org/) commit message from any changed files found in the working tree.
 
-## Example
-    $ rm -f file-[12345]
+## Installation
+    npm install -g git-auto-commit-msg
+
+## Examples
+By default, a simple summary of changed files is generated from the index.
+
+    $ for x in $(seq 1 3); do touch file-$x; done
+    $ git add -A
+    $ git-auto-commit-msg
+    add file-1, file-2 and 1 more
+
+Paths can be restricted by one or more `pathspec` arguments, even if other files are also present in the index.
+
     $ for x in $(seq 1 5); do touch file-$x; done
-    $ git add file-[123]
+    $ git add -A
     $ git-auto-commit-msg file-[12345]
     add file-1, file-2 and 1 more
 
-The `docs:` prefix is added if the changes are limited to *only* [README.md](README.md), [CHANGELOG.md](CHANGELOG.md) or [docs](docs).
+The `docs:` prefix is added if the changes are entirely limited to documentation files.
 
-    $ echo '# Example' > README.md
-    $ git add README.md
-    $ git-auto-commit-msg README.md
+    $ git-auto-commit-msg README.md CHANGELOG.md docs examples example
     docs: update README.md
+
+## License
+See the [LICENSE](LICENSE) file.
