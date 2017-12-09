@@ -29,5 +29,8 @@ The `docs:` prefix is added if the changes are entirely limited to documentation
     $ git-auto-commit-msg README.md CHANGELOG.md docs examples example
     docs: update README.md
 
+## Changelog
+See the [CHANGELOG.md](CHANGELOG.md) file.
+
 ## License
 See the [LICENSE](LICENSE) file.
