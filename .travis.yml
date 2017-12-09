@@ -2,5 +2,4 @@ language: node_js
 node_js:
   - 7
   - 6
-# FIXME: bails on a syntax error in index.test.js
-# - 4
+  - 4
