@@ -12,7 +12,7 @@
     "commitwip": "hack/commit-wip",
     "commitmsg": "validate-commit-msg",
     "prerelease": "hack/validate-commit-history",
-    "ci": "npm install --only=dev npm run -s prerelease"
+    "ci": "npm install --only=dev npm run -s prerelease && npm run -s test"
   },
   "repository": {
     "type": "git",
