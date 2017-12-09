@@ -3,10 +3,10 @@ const execFileSync = require('child_process').execFileSync;
 const PROGRAM_FILE = './index.js';
 
 test('exits successfully', function () {
-  expect(program().code).toBe(0);
+  expect(program([]).code).toBe(0);
 });
 
-function program(...argv) {
+function program(argv) {
   let result = {code: 0, error: null}
   try {
     result.stdout = execFileSync(PROGRAM_FILE, argv);
