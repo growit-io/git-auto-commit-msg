@@ -8,10 +8,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "npm i --only=dev && npm run prerelease && standard-version",
+    "release": "npm install --only=dev && npm run prerelease && standard-version",
     "commitwip": "hack/commit-wip",
     "commitmsg": "validate-commit-msg",
-    "prerelease": "hack/validate-commit-history"
+    "prerelease": "hack/validate-commit-history",
+    "ci": "npm install --only=dev npm run -s prerelease"
   },
   "repository": {
     "type": "git",
