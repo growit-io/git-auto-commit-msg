@@ -7,7 +7,7 @@ test('exits successfully', function () {
 });
 
 function program(argv) {
-  let result = {code: 0, error: null}
+  var result = {code: 0, error: null}
   try {
     result.stdout = execFileSync(PROGRAM_FILE, argv);
   } catch (err) {
