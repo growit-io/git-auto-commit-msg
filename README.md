@@ -8,3 +8,10 @@
     $ git add file-[123]
     $ git-auto-commit-msg file-[12345]
     add file-1, file-2 and 1 more
+
+The `docs:` prefix is added if the changes are limited to *only* [README.md](README.md), [CHANGELOG.md](CHANGELOG.md) or [docs](docs).
+
+    $ echo '# Example' > README.md
+    $ git add README.md
+    $ git-auto-commit-msg README.md
+    docs: update README.md
