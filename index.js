@@ -20,16 +20,16 @@ shell.exec(
       throw new Error(stderr)
     }
 
-    let added = []
-    let updated = []
-    let deleted = []
-    let lines = stdout.split(/\r?\n/);
+    var added = []
+    var updated = []
+    var deleted = []
+    var lines = stdout.split(/\r?\n/);
 
     for (var n in lines) {
-      let line = lines[n]
-      let file = line.slice(3)
-      let x = line[0] // tree -> index
-      let y = line[1] // index -> work tree
+      var line = lines[n]
+      var file = line.slice(3)
+      var x = line[0] // tree -> index
+      var y = line[1] // index -> work tree
 
       if (x === 'A') {
         added.push(file)
@@ -40,13 +40,13 @@ shell.exec(
       }
     }
 
-    let changes = added.concat(updated).concat(deleted);
+    var changes = added.concat(updated).concat(deleted);
     if (changes.length === 0) {
       // No changes, no commit message
       return
     }
 
-    let actions = []
+    var actions = []
     if (added.length > 0) {
       actions.push('add')
     }
@@ -67,16 +67,16 @@ function actionlist(actions) {
 
 function filelist(paths, options) {
   options = options || {}
-  let show = options.show || DEFAULT_SHOW_PATHS
+  var show = options.show || DEFAULT_SHOW_PATHS
 
   if (paths.length === 1) {
     return paths[0]
   } else if (paths.length > show) {
-    let rest = paths.slice(show)
+    var rest = paths.slice(show)
     return paths.slice(0, show).join(', ') + ' and ' + rest.length + ' more'
   } else {
-    let first = paths.slice(0, paths.length - 1)
-    let last = paths[paths.length - 1]
+    var first = paths.slice(0, paths.length - 1)
+    var last = paths[paths.length - 1]
     return first.join(', ') + ' and ' + last
   }
 }

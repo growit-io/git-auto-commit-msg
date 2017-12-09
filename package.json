@@ -7,11 +7,12 @@
     "git-auto-commit-msg": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "npm i --only=dev && npm run prerelease && standard-version",
+    "test": "jest",
+    "release": "npm install --only=dev && npm run prerelease && standard-version",
     "commitwip": "hack/commit-wip",
     "commitmsg": "validate-commit-msg",
-    "prerelease": "hack/validate-commit-history"
+    "prerelease": "hack/validate-commit-history",
+    "ci": "npm install --only=dev npm run -s prerelease && npm run -s test"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
   },
   "dependencies": {
     "commander": "^2.12.2",
+    "jest": "^21.2.1",
     "shell-escape": "^0.2.0",
     "shelljs": "^0.7.8"
   }
